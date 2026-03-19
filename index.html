@@ -3,417 +3,418 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HRF VP Promotion Process Flow</title>
+<title>HRF — Promotion Process Flow: Director to Vice President</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { 
     font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; 
     background: #FAF8F5; 
     color: #3A3632;
     padding: 40px 20px;
+    min-height: 100vh;
   }
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap');
   
   .container {
-    max-width: 900px;
+    max-width: 880px;
     margin: 0 auto;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 56px;
   }
   
   h1 {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 500;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     color: #3A3632;
-    text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
   }
   
   .subtitle {
-    text-align: center;
     font-size: 0.95rem;
     color: #8A8580;
-    margin-bottom: 50px;
     font-weight: 400;
   }
   
-  .flow {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+  .confidential {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #A09890;
+    border: 1px solid #D4CEC5;
+    border-radius: 4px;
+    padding: 3px 10px;
+    margin-top: 12px;
   }
   
-  /* Vertical connector line */
-  .flow::before {
+  /* Timeline */
+  .timeline {
+    position: relative;
+    padding-left: 0;
+  }
+  
+  .timeline::before {
     content: '';
     position: absolute;
-    left: 50%;
+    left: 28px;
     top: 0;
     bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, #D4CEC5, #4A5D4E, #D4CEC5);
-    transform: translateX(-50%);
-    z-index: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #4A5D4E 0%, #4A5D4E 65%, #C4A84D 75%, #4A5D4E 85%, #4A5D4E 100%);
+    border-radius: 2px;
   }
   
   .step {
     position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
+    padding-left: 76px;
+    margin-bottom: 36px;
   }
   
-  .step:nth-child(odd) {
-    flex-direction: row;
-  }
-  
-  .step:nth-child(even) {
-    flex-direction: row-reverse;
-  }
-  
-  .step-content {
-    width: calc(50% - 40px);
-    background: #FFFFFF;
-    border: 1px solid #EDE8E0;
-    border-radius: 12px;
-    padding: 24px 28px;
-    box-shadow: 0 2px 12px rgba(58, 54, 50, 0.04);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .step-content:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(58, 54, 50, 0.08);
-  }
-  
-  .step-node {
-    width: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 20px;
-    flex-shrink: 0;
-  }
-  
-  .step-number {
-    width: 44px;
-    height: 44px;
+  .step-marker {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #FFFFFF;
-    position: relative;
     z-index: 2;
+    box-shadow: 0 2px 8px rgba(74, 93, 78, 0.2);
   }
   
-  .step-spacer {
-    width: calc(50% - 40px);
+  .step:nth-child(1) .step-marker { background: #4A5D4E; }
+  .step:nth-child(2) .step-marker { background: #4A5D4E; }
+  .step:nth-child(3) .step-marker { background: #4A5D4E; }
+  .step:nth-child(4) .step-marker { background: #4A5D4E; }
+  .step:nth-child(5) .step-marker { background: #4A5D4E; }
+  
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #EDE8E0;
+    border-radius: 10px;
+    padding: 24px 28px;
+    box-shadow: 0 1px 8px rgba(58, 54, 50, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  /* Step colors */
-  .step:nth-child(1) .step-number { background: #4A5D4E; }
-  .step:nth-child(2) .step-number { background: #5A6D5E; }
-  .step:nth-child(3) .step-number { background: #6A7D6E; }
-  .step:nth-child(4) .step-number { background: #4A5D4E; }
-  .step:nth-child(5) .step-number { background: #5A6D5E; }
-  .step:nth-child(6) .step-number { background: #6A7D6E; }
-  .step:nth-child(7) .step-number { background: #4A5D4E; }
+  .card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(58, 54, 50, 0.07);
+  }
   
-  .step:nth-child(1) .step-content { border-left: 3px solid #4A5D4E; }
-  .step:nth-child(2) .step-content { border-right: 3px solid #5A6D5E; }
-  .step:nth-child(3) .step-content { border-left: 3px solid #6A7D6E; }
-  .step:nth-child(4) .step-content { border-right: 3px solid #4A5D4E; }
-  .step:nth-child(5) .step-content { border-left: 3px solid #5A6D5E; }
-  .step:nth-child(6) .step-content { border-right: 3px solid #6A7D6E; }
-  .step:nth-child(7) .step-content { border-left: 3px solid #4A5D4E; }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
   
-  .step-title {
+  .card-title {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 600;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     color: #3A3632;
-    margin-bottom: 6px;
   }
   
-  .step-duration {
-    font-size: 0.75rem;
+  .card-badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  
+  .badge {
+    font-size: 0.68rem;
     font-weight: 600;
-    color: #4A5D4E;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 10px;
+    letter-spacing: 0.06em;
+    padding: 3px 10px;
+    border-radius: 4px;
   }
   
-  .step-items {
+  .badge-timing {
+    background: #EDE8E0;
+    color: #6A6560;
+  }
+  
+  .badge-owner {
+    background: #E8EDE8;
+    color: #4A5D4E;
+  }
+  
+  .card-items {
     list-style: none;
     padding: 0;
   }
   
-  .step-items li {
+  .card-items li {
     font-size: 0.88rem;
-    line-height: 1.6;
+    line-height: 1.65;
     color: #5A5550;
-    padding-left: 16px;
+    padding: 4px 0 4px 20px;
     position: relative;
-    margin-bottom: 4px;
   }
   
-  .step-items li::before {
-    content: '→';
+  .card-items li::before {
+    content: '';
     position: absolute;
     left: 0;
-    color: #4A5D4E;
-    font-weight: 500;
+    top: 12px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #D5DDD4;
   }
   
-  .step-owner {
-    margin-top: 12px;
-    font-size: 0.78rem;
-    color: #8A8580;
-    font-style: italic;
-  }
-  
-  /* Decision diamond */
+  /* Decision gate */
   .decision-gate {
     position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    margin: 10px 0 20px;
+    padding-left: 76px;
+    margin-bottom: 36px;
   }
   
-  .diamond {
-    background: #4A5D4E;
-    color: white;
-    padding: 16px 32px;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 0.85rem;
-    font-weight: 500;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 4px 16px rgba(74, 93, 78, 0.25);
+  .decision-gate .step-marker {
+    background: #C4A84D;
+    box-shadow: 0 2px 8px rgba(196, 168, 77, 0.25);
   }
   
-  .diamond-branches {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 12px;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .branch {
+  .decision-card {
     background: #FFFFFF;
-    border: 1px solid #EDE8E0;
-    border-radius: 8px;
-    padding: 12px 20px;
-    font-size: 0.82rem;
-    text-align: center;
-    width: 200px;
+    border: 2px solid #C4A84D;
+    border-radius: 10px;
+    padding: 24px 28px;
+    box-shadow: 0 2px 12px rgba(196, 168, 77, 0.08);
   }
   
-  .branch.green { border-top: 3px solid #4A5D4E; }
-  .branch.yellow { border-top: 3px solid #C4A84D; }
-  .branch.red { border-top: 3px solid #A05040; }
-  
-  .branch-label {
+  .decision-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 600;
-    font-size: 0.75rem;
+    font-size: 1.25rem;
+    color: #3A3632;
+    margin-bottom: 16px;
+  }
+  
+  .decision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  
+  .outcome {
+    border-radius: 8px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+  
+  .outcome-ready {
+    background: #EFF5EF;
+    border: 1px solid #B8CDB8;
+  }
+  
+  .outcome-soon {
+    background: #FBF6E8;
+    border: 1px solid #E0D5A8;
+  }
+  
+  .outcome-not {
+    background: #F8EFED;
+    border: 1px solid #D4B0A8;
+  }
+  
+  .outcome-label {
+    font-weight: 600;
+    font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
   
-  .branch.green .branch-label { color: #4A5D4E; }
-  .branch.yellow .branch-label { color: #C4A84D; }
-  .branch.red .branch-label { color: #A05040; }
+  .outcome-ready .outcome-label { color: #4A5D4E; }
+  .outcome-soon .outcome-label { color: #9A8530; }
+  .outcome-not .outcome-label { color: #8A5040; }
   
-  .footer-note {
-    text-align: center;
+  .outcome-text {
     font-size: 0.8rem;
+    color: #5A5550;
+    line-height: 1.4;
+  }
+  
+  .decision-note {
+    margin-top: 14px;
+    font-size: 0.82rem;
     color: #8A8580;
-    margin-top: 40px;
+    font-style: italic;
+    text-align: center;
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    font-size: 0.78rem;
+    color: #A09890;
+    margin-top: 48px;
     padding-top: 20px;
     border-top: 1px solid #EDE8E0;
   }
   
   /* Responsive */
-  @media (max-width: 700px) {
-    .flow::before { left: 30px; }
-    .step, .step:nth-child(even) { flex-direction: row; }
-    .step-spacer { display: none; }
-    .step-content { width: calc(100% - 70px); }
-    .step-node { width: 60px; padding-top: 16px; }
-    .step-content { border-left: 3px solid #4A5D4E !important; border-right: none !important; }
-    .diamond-branches { flex-direction: column; align-items: center; gap: 12px; }
-    .branch { width: 260px; }
-    h1 { font-size: 1.6rem; }
+  @media (max-width: 600px) {
+    h1 { font-size: 1.7rem; }
+    .step, .decision-gate { padding-left: 60px; margin-bottom: 24px; }
+    .timeline::before { left: 20px; }
+    .step-marker { left: 2px; width: 36px; height: 36px; font-size: 0.9rem; }
+    .card { padding: 18px 20px; }
+    .decision-grid { grid-template-columns: 1fr; gap: 8px; }
+    .card-header { flex-direction: column; }
   }
 </style>
 </head>
 <body>
 <div class="container">
-  <h1>Director → VP Promotion Process</h1>
-  <p class="subtitle">Human Rights Foundation — Internal Promotion Protocol</p>
   
-  <div class="flow">
+  <div class="header">
+    <h1>Promotion Process Flow</h1>
+    <p class="subtitle">Director to Vice President</p>
+    <div class="confidential">Confidential — HRF Internal Use Only</div>
+  </div>
+  
+  <div class="timeline">
     
+    <!-- Step 1 -->
     <div class="step">
-      <div class="step-content">
-        <div class="step-title">Define the VP Role</div>
-        <div class="step-duration">Pre-Process</div>
-        <ul class="step-items">
+      <div class="step-marker">1</div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Define the VP Role</div>
+          <div class="card-badges">
+            <span class="badge badge-timing">Pre-Process</span>
+            <span class="badge badge-owner">COO + President + Manager</span>
+          </div>
+        </div>
+        <ul class="card-items">
           <li>Document VP-level scope, authority, and accountability</li>
           <li>Clarify what a VP does that a Director doesn't</li>
           <li>Align title, reporting structure, and compensation band</li>
           <li>Confirm budget and organizational need</li>
         </ul>
-        <div class="step-owner">Owner: COO + CEO</div>
       </div>
-      <div class="step-node"><div class="step-number">1</div></div>
-      <div class="step-spacer"></div>
     </div>
     
+    <!-- Step 2 -->
     <div class="step">
-      <div class="step-content">
-        <div class="step-title">Establish Readiness Criteria</div>
-        <div class="step-duration">Pre-Process</div>
-        <ul class="step-items">
-          <li>Build competency framework: leadership, strategic thinking, stakeholder management, talent development</li>
+      <div class="step-marker">2</div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Establish Readiness Criteria</div>
+          <div class="card-badges">
+            <span class="badge badge-timing">Pre-Process</span>
+            <span class="badge badge-owner">COO + HR + Manager</span>
+          </div>
+        </div>
+        <ul class="card-items">
+          <li>Build competency framework: leadership, strategic thinking, stakeholder management, talent development, departmental KPIs and metrics</li>
           <li>Set performance threshold and behavioral evidence requirements</li>
           <li>Create weighted scorecard with gating categories</li>
           <li>Define evaluation period and review cadence</li>
         </ul>
-        <div class="step-owner">Owner: COO + HR</div>
       </div>
-      <div class="step-node"><div class="step-number">2</div></div>
-      <div class="step-spacer"></div>
     </div>
     
+    <!-- Step 3 -->
     <div class="step">
-      <div class="step-content">
-        <div class="step-title">Assessment Period</div>
-        <div class="step-duration">6 Months</div>
-        <ul class="step-items">
+      <div class="step-marker">3</div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Assessment Period</div>
+          <div class="card-badges">
+            <span class="badge badge-timing">6 Months</span>
+            <span class="badge badge-owner">HR + Manager + Candidate</span>
+          </div>
+        </div>
+        <ul class="card-items">
           <li>Monthly 1:1 check-ins with documented evidence</li>
           <li>Scorecard ratings updated each month</li>
-          <li>360° peer feedback pulse at Month 3 and Month 6</li>
+          <li>Leadership 360 Assessment</li>
+          <li>Caliper Assessment for the VP Role</li>
           <li>Midpoint review: on track / at risk / off track</li>
           <li>Track both outcomes delivered and leadership behaviors demonstrated</li>
         </ul>
-        <div class="step-owner">Owner: COO (evaluator) + Candidate</div>
       </div>
-      <div class="step-node"><div class="step-number">3</div></div>
-      <div class="step-spacer"></div>
     </div>
     
-    <div class="step">
-      <div class="step-content">
-        <div class="step-title">Readiness Review & Recommendation</div>
-        <div class="step-duration">End of Assessment</div>
-        <ul class="step-items">
+    <!-- Step 4 — Decision Gate -->
+    <div class="decision-gate">
+      <div class="step-marker">4</div>
+      <div class="decision-card">
+        <div class="decision-title">Readiness Review & Recommendation</div>
+        <div class="card-badges" style="margin-bottom: 16px;">
+          <span class="badge badge-timing">End of Assessment</span>
+          <span class="badge badge-owner">COO + HR + Manager</span>
+        </div>
+        <ul class="card-items" style="margin-bottom: 20px;">
           <li>Final scorecard calculation with weighted scores</li>
-          <li>Check gating categories — no critical area below 3.0</li>
+          <li>Check gating categories — should not score below 3.0</li>
           <li>Prepare evidence-based recommendation memo</li>
-          <li>Recommendation: Ready Now / Ready Soon / Not Yet Ready</li>
           <li>Include timeline and any conditions for advancement</li>
         </ul>
-        <div class="step-owner">Owner: COO</div>
-      </div>
-      <div class="step-node"><div class="step-number">4</div></div>
-      <div class="step-spacer"></div>
-    </div>
-    
-  </div>
-  
-  <!-- Decision Gate -->
-  <div class="decision-gate">
-    <div>
-      <div class="diamond">READINESS DECISION</div>
-      <div class="diamond-branches">
-        <div class="branch green">
-          <div class="branch-label">✓ Ready Now</div>
-          Proceed to approval and promotion
-        </div>
-        <div class="branch yellow">
-          <div class="branch-label">◐ Ready Soon</div>
-          Extend assessment 3 months with targeted development
-        </div>
-        <div class="branch red">
-          <div class="branch-label">✗ Not Yet Ready</div>
-          Continue in current role; reassess in 6–12 months
+        <div class="decision-grid">
+          <div class="outcome outcome-ready">
+            <div class="outcome-label">✓ Ready Now</div>
+            <div class="outcome-text">Proceed to approval chain</div>
+          </div>
+          <div class="outcome outcome-soon">
+            <div class="outcome-label">◐ Ready Soon</div>
+            <div class="outcome-text">Extend assessment 3 months with targeted development</div>
+          </div>
+          <div class="outcome outcome-not">
+            <div class="outcome-label">✗ Not Yet Ready</div>
+            <div class="outcome-text">Continue in current role; reassess in 6–12 months</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  
-  <div class="flow" style="margin-top: 30px;">
     
+    <!-- Step 5 -->
     <div class="step">
-      <div class="step-content">
-        <div class="step-title">Approval Chain</div>
-        <div class="step-duration">1–2 Weeks</div>
-        <ul class="step-items">
-          <li>COO recommendation memo to CEO/President</li>
-          <li>CEO review and approval</li>
-          <li>Board notification (if required by policy)</li>
+      <div class="step-marker">5</div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Approval Chain</div>
+          <div class="card-badges">
+            <span class="badge badge-timing">1–2 Weeks</span>
+            <span class="badge badge-owner">Manager → COO → President</span>
+          </div>
+        </div>
+        <ul class="card-items">
+          <li>Manager recommendation communicated to COO and President</li>
+          <li>COO and President review and approval</li>
           <li>Compensation adjustment per HRF Compensation Framework</li>
           <li>Updated job description and scope documentation</li>
         </ul>
-        <div class="step-owner">Owner: COO → CEO → Board (if applicable)</div>
       </div>
-      <div class="step-node"><div class="step-number">5</div></div>
-      <div class="step-spacer"></div>
-    </div>
-    
-    <div class="step">
-      <div class="step-content">
-        <div class="step-title">Announcement & Transition</div>
-        <div class="step-duration">Week of Promotion</div>
-        <ul class="step-items">
-          <li>Internal announcement with expanded scope framing</li>
-          <li>Team communication about any reporting changes</li>
-          <li>90-day transition plan for new responsibilities</li>
-          <li>Updated systems, titles, and access</li>
-        </ul>
-        <div class="step-owner">Owner: COO + HR</div>
-      </div>
-      <div class="step-node"><div class="step-number">6</div></div>
-      <div class="step-spacer"></div>
-    </div>
-    
-    <div class="step">
-      <div class="step-content">
-        <div class="step-title">Post-Promotion Support</div>
-        <div class="step-duration">First 90 Days</div>
-        <ul class="step-items">
-          <li>Structured onboarding into VP scope</li>
-          <li>Executive coaching or peer mentoring (optional)</li>
-          <li>30/60/90-day check-ins on transition progress</li>
-          <li>6-month post-promotion review to confirm trajectory</li>
-        </ul>
-        <div class="step-owner">Owner: COO + New VP</div>
-      </div>
-      <div class="step-node"><div class="step-number">7</div></div>
-      <div class="step-spacer"></div>
     </div>
     
   </div>
   
-  <div class="footer-note">
-    CONFIDENTIAL — HRF Internal Use Only · Sources: SHRM, AIHR, Center for Creative Leadership · March 2026
+  <div class="footer">
+    Human Rights Foundation · Director → VP Promotion Protocol · March 2026
   </div>
+  
 </div>
 
 <script>
-  // Subtle scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -421,12 +422,12 @@
         entry.target.style.transform = 'translateY(0)';
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.1 });
   
   document.querySelectorAll('.step, .decision-gate').forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
     observer.observe(el);
   });
 </script>
