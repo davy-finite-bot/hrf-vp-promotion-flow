@@ -5,58 +5,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HRF — Promotion Process Flow: Director to Vice President</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { 
-    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; 
-    background: #FAF8F5; 
-    color: #3A3632;
-    padding: 40px 20px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+    background: #FFFFFF; 
+    color: #1F2124;
+    padding: 48px 24px;
     min-height: 100vh;
   }
   
   .container {
-    max-width: 880px;
+    max-width: 860px;
     margin: 0 auto;
   }
   
   .header {
     text-align: center;
     margin-bottom: 56px;
+    padding-bottom: 32px;
+    border-bottom: 3px solid #EA303D;
+  }
+  
+  .hrf-logo {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #EA303D;
+    margin-bottom: 16px;
   }
   
   h1 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 500;
-    font-size: 2.4rem;
-    color: #3A3632;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #1F2124;
     margin-bottom: 6px;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
   }
   
   .subtitle {
-    font-size: 0.95rem;
-    color: #8A8580;
+    font-size: 1rem;
+    color: #69727D;
     font-weight: 400;
+    margin-bottom: 16px;
   }
   
   .confidential {
     display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 600;
+    font-size: 0.65rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #A09890;
-    border: 1px solid #D4CEC5;
-    border-radius: 4px;
-    padding: 3px 10px;
-    margin-top: 12px;
+    letter-spacing: 0.14em;
+    color: #EA303D;
+    border: 1.5px solid #EA303D;
+    border-radius: 3px;
+    padding: 4px 12px;
   }
   
   /* Timeline */
   .timeline {
     position: relative;
-    padding-left: 0;
   }
   
   .timeline::before {
@@ -66,14 +76,14 @@
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(to bottom, #4A5D4E 0%, #4A5D4E 65%, #C4A84D 75%, #4A5D4E 85%, #4A5D4E 100%);
+    background: #E8E8E8;
     border-radius: 2px;
   }
   
   .step {
     position: relative;
     padding-left: 76px;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
   }
   
   .step-marker {
@@ -86,31 +96,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 700;
+    font-size: 0.95rem;
     color: #FFFFFF;
     z-index: 2;
-    box-shadow: 0 2px 8px rgba(74, 93, 78, 0.2);
+    background: #1F2124;
+    box-shadow: 0 2px 8px rgba(31, 33, 36, 0.2);
   }
-  
-  .step:nth-child(1) .step-marker { background: #4A5D4E; }
-  .step:nth-child(2) .step-marker { background: #4A5D4E; }
-  .step:nth-child(3) .step-marker { background: #4A5D4E; }
-  .step:nth-child(4) .step-marker { background: #4A5D4E; }
-  .step:nth-child(5) .step-marker { background: #4A5D4E; }
   
   .card {
     background: #FFFFFF;
-    border: 1px solid #EDE8E0;
-    border-radius: 10px;
-    padding: 24px 28px;
-    box-shadow: 0 1px 8px rgba(58, 54, 50, 0.04);
+    border: 1px solid #E8E8E8;
+    border-left: 4px solid #1F2124;
+    border-radius: 6px;
+    padding: 22px 26px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .card:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(58, 54, 50, 0.07);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   }
   
   .card-header {
@@ -123,10 +129,9 @@
   }
   
   .card-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 600;
-    font-size: 1.25rem;
-    color: #3A3632;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1F2124;
   }
   
   .card-badges {
@@ -136,22 +141,22 @@
   }
   
   .badge {
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     padding: 3px 10px;
-    border-radius: 4px;
+    border-radius: 3px;
   }
   
   .badge-timing {
-    background: #EDE8E0;
-    color: #6A6560;
+    background: #F4F4F4;
+    color: #69727D;
   }
   
   .badge-owner {
-    background: #E8EDE8;
-    color: #4A5D4E;
+    background: #FEF0F0;
+    color: #EA303D;
   }
   
   .card-items {
@@ -162,8 +167,8 @@
   .card-items li {
     font-size: 0.88rem;
     line-height: 1.65;
-    color: #5A5550;
-    padding: 4px 0 4px 20px;
+    color: #3F444B;
+    padding: 3px 0 3px 20px;
     position: relative;
   }
   
@@ -171,113 +176,112 @@
     content: '';
     position: absolute;
     left: 0;
-    top: 12px;
-    width: 8px;
-    height: 8px;
+    top: 11px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
-    background: #D5DDD4;
+    background: #EA303D;
+    opacity: 0.5;
   }
   
   /* Decision gate */
   .decision-gate {
     position: relative;
     padding-left: 76px;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
   }
   
   .decision-gate .step-marker {
-    background: #C4A84D;
-    box-shadow: 0 2px 8px rgba(196, 168, 77, 0.25);
+    background: #EA303D;
+    box-shadow: 0 2px 8px rgba(234, 48, 61, 0.3);
   }
   
   .decision-card {
     background: #FFFFFF;
-    border: 2px solid #C4A84D;
-    border-radius: 10px;
-    padding: 24px 28px;
-    box-shadow: 0 2px 12px rgba(196, 168, 77, 0.08);
+    border: 2px solid #EA303D;
+    border-radius: 6px;
+    padding: 24px 26px;
+    box-shadow: 0 2px 12px rgba(234, 48, 61, 0.06);
   }
   
   .decision-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 600;
-    font-size: 1.25rem;
-    color: #3A3632;
-    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1F2124;
+    margin-bottom: 14px;
   }
   
   .decision-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 12px;
+    gap: 10px;
+    margin-top: 20px;
   }
   
   .outcome {
-    border-radius: 8px;
-    padding: 14px 16px;
+    border-radius: 6px;
+    padding: 14px 14px;
     text-align: center;
   }
   
   .outcome-ready {
-    background: #EFF5EF;
-    border: 1px solid #B8CDB8;
+    background: #F0F8F0;
+    border: 1px solid #C0D8C0;
   }
   
   .outcome-soon {
-    background: #FBF6E8;
-    border: 1px solid #E0D5A8;
+    background: #FFF8E8;
+    border: 1px solid #E8D8A0;
   }
   
   .outcome-not {
-    background: #F8EFED;
-    border: 1px solid #D4B0A8;
+    background: #FEF0F0;
+    border: 1px solid #E0B0B0;
   }
   
   .outcome-label {
-    font-weight: 600;
-    font-size: 0.78rem;
+    font-weight: 700;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     margin-bottom: 6px;
   }
   
-  .outcome-ready .outcome-label { color: #4A5D4E; }
-  .outcome-soon .outcome-label { color: #9A8530; }
-  .outcome-not .outcome-label { color: #8A5040; }
+  .outcome-ready .outcome-label { color: #2D6A2D; }
+  .outcome-soon .outcome-label { color: #8A7020; }
+  .outcome-not .outcome-label { color: #A03030; }
   
   .outcome-text {
-    font-size: 0.8rem;
-    color: #5A5550;
+    font-size: 0.78rem;
+    color: #3F444B;
     line-height: 1.4;
-  }
-  
-  .decision-note {
-    margin-top: 14px;
-    font-size: 0.82rem;
-    color: #8A8580;
-    font-style: italic;
-    text-align: center;
   }
   
   /* Footer */
   .footer {
     text-align: center;
-    font-size: 0.78rem;
-    color: #A09890;
+    font-size: 0.75rem;
+    color: #69727D;
     margin-top: 48px;
     padding-top: 20px;
-    border-top: 1px solid #EDE8E0;
+    border-top: 3px solid #EA303D;
+  }
+  
+  .footer strong {
+    color: #EA303D;
+    font-weight: 700;
   }
   
   /* Responsive */
   @media (max-width: 600px) {
-    h1 { font-size: 1.7rem; }
+    h1 { font-size: 1.6rem; }
     .step, .decision-gate { padding-left: 60px; margin-bottom: 24px; }
     .timeline::before { left: 20px; }
-    .step-marker { left: 2px; width: 36px; height: 36px; font-size: 0.9rem; }
-    .card { padding: 18px 20px; }
+    .step-marker { left: 2px; width: 36px; height: 36px; font-size: 0.85rem; }
+    .card, .decision-card { padding: 18px 18px; }
     .decision-grid { grid-template-columns: 1fr; gap: 8px; }
     .card-header { flex-direction: column; }
+    body { padding: 32px 16px; }
   }
 </style>
 </head>
@@ -285,9 +289,10 @@
 <div class="container">
   
   <div class="header">
+    <div class="hrf-logo">Human Rights Foundation</div>
     <h1>Promotion Process Flow</h1>
     <p class="subtitle">Director to Vice President</p>
-    <div class="confidential">Confidential — HRF Internal Use Only</div>
+    <div class="confidential">Confidential — Internal Use Only</div>
   </div>
   
   <div class="timeline">
@@ -359,11 +364,11 @@
       <div class="step-marker">4</div>
       <div class="decision-card">
         <div class="decision-title">Readiness Review & Recommendation</div>
-        <div class="card-badges" style="margin-bottom: 16px;">
+        <div class="card-badges" style="margin-bottom: 14px;">
           <span class="badge badge-timing">End of Assessment</span>
           <span class="badge badge-owner">CTO + HR + Manager</span>
         </div>
-        <ul class="card-items" style="margin-bottom: 20px;">
+        <ul class="card-items">
           <li>Final scorecard calculation with weighted scores</li>
           <li>Check gating categories — should not score below 3.0</li>
           <li>Prepare evidence-based recommendation memo</li>
@@ -449,7 +454,7 @@
   </div>
   
   <div class="footer">
-    Human Rights Foundation · Director → VP Promotion Protocol · March 2026
+    <strong>Human Rights Foundation</strong> · Director → VP Promotion Protocol · March 2026
   </div>
   
 </div>
