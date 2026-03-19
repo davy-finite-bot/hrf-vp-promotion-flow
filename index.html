@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HRF — Promotion Process Flow: Director to Vice President</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { 
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
-    background: #FFFFFF; 
-    color: #1F2124;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; 
+    background: #000000; 
+    color: #EAEAEA;
     padding: 48px 24px;
     min-height: 100vh;
   }
@@ -22,46 +22,46 @@
   
   .header {
     text-align: center;
-    margin-bottom: 56px;
-    padding-bottom: 32px;
-    border-bottom: 3px solid #EA303D;
+    margin-bottom: 60px;
+    padding-bottom: 36px;
+    border-bottom: 2px solid #E0048B;
   }
   
   .hrf-logo {
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-size: 0.75rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #EA303D;
-    margin-bottom: 16px;
+    letter-spacing: 0.25em;
+    color: #E0048B;
+    margin-bottom: 20px;
   }
   
   h1 {
-    font-weight: 700;
-    font-size: 2.2rem;
-    color: #1F2124;
-    margin-bottom: 6px;
+    font-weight: 800;
+    font-size: 2.4rem;
+    color: #FFFFFF;
+    margin-bottom: 8px;
     letter-spacing: -0.02em;
-    line-height: 1.15;
+    line-height: 1.1;
   }
   
   .subtitle {
     font-size: 1rem;
-    color: #69727D;
-    font-weight: 400;
-    margin-bottom: 16px;
+    color: #BBB5B4;
+    font-weight: 500;
+    margin-bottom: 18px;
   }
   
   .confidential {
     display: inline-block;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: #EA303D;
-    border: 1.5px solid #EA303D;
+    letter-spacing: 0.15em;
+    color: #E0048B;
+    border: 1.5px solid #E0048B;
     border-radius: 3px;
-    padding: 4px 12px;
+    padding: 4px 14px;
   }
   
   /* Timeline */
@@ -75,15 +75,15 @@
     left: 28px;
     top: 0;
     bottom: 0;
-    width: 3px;
-    background: #E8E8E8;
+    width: 2px;
+    background: linear-gradient(to bottom, #E0048B, #E0048B 60%, rgba(224, 4, 139, 0.3));
     border-radius: 2px;
   }
   
   .step {
     position: relative;
     padding-left: 76px;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
   
   .step-marker {
@@ -96,27 +96,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
-    font-size: 0.95rem;
+    font-weight: 800;
+    font-size: 0.9rem;
     color: #FFFFFF;
     z-index: 2;
-    background: #1F2124;
-    box-shadow: 0 2px 8px rgba(31, 33, 36, 0.2);
+    background: #E0048B;
+    box-shadow: 0 0 20px rgba(224, 4, 139, 0.3);
   }
   
   .card {
-    background: #FFFFFF;
-    border: 1px solid #E8E8E8;
-    border-left: 4px solid #1F2124;
-    border-radius: 6px;
-    padding: 22px 26px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #111114;
+    border: 1px solid #2A2A2E;
+    border-left: 3px solid #E0048B;
+    border-radius: 8px;
+    padding: 24px 26px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   }
   
   .card:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(224, 4, 139, 0.08);
+    border-color: #3A3A3E;
   }
   
   .card-header {
@@ -131,7 +131,7 @@
   .card-title {
     font-weight: 700;
     font-size: 1.1rem;
-    color: #1F2124;
+    color: #FFFFFF;
   }
   
   .card-badges {
@@ -141,22 +141,24 @@
   }
   
   .badge {
-    font-size: 0.65rem;
-    font-weight: 600;
+    font-size: 0.6rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     padding: 3px 10px;
     border-radius: 3px;
   }
   
   .badge-timing {
-    background: #F4F4F4;
-    color: #69727D;
+    background: #1F1F24;
+    color: #BBB5B4;
+    border: 1px solid #2A2A2E;
   }
   
   .badge-owner {
-    background: #FEF0F0;
-    color: #EA303D;
+    background: rgba(224, 4, 139, 0.1);
+    color: #E0048B;
+    border: 1px solid rgba(224, 4, 139, 0.25);
   }
   
   .card-items {
@@ -167,7 +169,7 @@
   .card-items li {
     font-size: 0.88rem;
     line-height: 1.65;
-    color: #3F444B;
+    color: #BBB5B4;
     padding: 3px 0 3px 20px;
     position: relative;
   }
@@ -176,38 +178,38 @@
     content: '';
     position: absolute;
     left: 0;
-    top: 11px;
-    width: 7px;
-    height: 7px;
+    top: 12px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    background: #EA303D;
-    opacity: 0.5;
+    background: #E0048B;
   }
   
   /* Decision gate */
   .decision-gate {
     position: relative;
     padding-left: 76px;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
   
   .decision-gate .step-marker {
-    background: #EA303D;
-    box-shadow: 0 2px 8px rgba(234, 48, 61, 0.3);
+    background: #FFFFFF;
+    color: #E0048B;
+    box-shadow: 0 0 24px rgba(224, 4, 139, 0.35);
   }
   
   .decision-card {
-    background: #FFFFFF;
-    border: 2px solid #EA303D;
-    border-radius: 6px;
+    background: #111114;
+    border: 2px solid #E0048B;
+    border-radius: 8px;
     padding: 24px 26px;
-    box-shadow: 0 2px 12px rgba(234, 48, 61, 0.06);
+    box-shadow: 0 0 32px rgba(224, 4, 139, 0.06);
   }
   
   .decision-title {
     font-weight: 700;
     font-size: 1.1rem;
-    color: #1F2124;
+    color: #FFFFFF;
     margin-bottom: 14px;
   }
   
@@ -220,62 +222,62 @@
   
   .outcome {
     border-radius: 6px;
-    padding: 14px 14px;
+    padding: 16px 14px;
     text-align: center;
   }
   
   .outcome-ready {
-    background: #F0F8F0;
-    border: 1px solid #C0D8C0;
+    background: rgba(40, 180, 80, 0.08);
+    border: 1px solid rgba(40, 180, 80, 0.25);
   }
   
   .outcome-soon {
-    background: #FFF8E8;
-    border: 1px solid #E8D8A0;
+    background: rgba(224, 180, 40, 0.08);
+    border: 1px solid rgba(224, 180, 40, 0.25);
   }
   
   .outcome-not {
-    background: #FEF0F0;
-    border: 1px solid #E0B0B0;
+    background: rgba(224, 4, 139, 0.06);
+    border: 1px solid rgba(224, 4, 139, 0.2);
   }
   
   .outcome-label {
-    font-weight: 700;
-    font-size: 0.75rem;
+    font-weight: 800;
+    font-size: 0.72rem;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
     margin-bottom: 6px;
   }
   
-  .outcome-ready .outcome-label { color: #2D6A2D; }
-  .outcome-soon .outcome-label { color: #8A7020; }
-  .outcome-not .outcome-label { color: #A03030; }
+  .outcome-ready .outcome-label { color: #28B450; }
+  .outcome-soon .outcome-label { color: #E0B428; }
+  .outcome-not .outcome-label { color: #E0048B; }
   
   .outcome-text {
     font-size: 0.78rem;
-    color: #3F444B;
+    color: #BBB5B4;
     line-height: 1.4;
   }
   
   /* Footer */
   .footer {
     text-align: center;
-    font-size: 0.75rem;
-    color: #69727D;
-    margin-top: 48px;
-    padding-top: 20px;
-    border-top: 3px solid #EA303D;
+    font-size: 0.72rem;
+    color: #707070;
+    margin-top: 52px;
+    padding-top: 24px;
+    border-top: 2px solid #E0048B;
   }
   
   .footer strong {
-    color: #EA303D;
+    color: #E0048B;
     font-weight: 700;
   }
   
   /* Responsive */
   @media (max-width: 600px) {
-    h1 { font-size: 1.6rem; }
-    .step, .decision-gate { padding-left: 60px; margin-bottom: 24px; }
+    h1 { font-size: 1.7rem; }
+    .step, .decision-gate { padding-left: 60px; margin-bottom: 22px; }
     .timeline::before { left: 20px; }
     .step-marker { left: 2px; width: 36px; height: 36px; font-size: 0.85rem; }
     .card, .decision-card { padding: 18px 18px; }
@@ -297,7 +299,6 @@
   
   <div class="timeline">
     
-    <!-- Step 1 -->
     <div class="step">
       <div class="step-marker">1</div>
       <div class="card">
@@ -317,7 +318,6 @@
       </div>
     </div>
     
-    <!-- Step 2 -->
     <div class="step">
       <div class="step-marker">2</div>
       <div class="card">
@@ -337,7 +337,6 @@
       </div>
     </div>
     
-    <!-- Step 3 -->
     <div class="step">
       <div class="step-marker">3</div>
       <div class="card">
@@ -359,7 +358,6 @@
       </div>
     </div>
     
-    <!-- Step 4 — Decision Gate -->
     <div class="decision-gate">
       <div class="step-marker">4</div>
       <div class="decision-card">
@@ -391,7 +389,6 @@
       </div>
     </div>
     
-    <!-- Step 5 -->
     <div class="step">
       <div class="step-marker">5</div>
       <div class="card">
@@ -411,7 +408,6 @@
       </div>
     </div>
     
-    <!-- Step 6 -->
     <div class="step">
       <div class="step-marker">6</div>
       <div class="card">
@@ -431,7 +427,6 @@
       </div>
     </div>
     
-    <!-- Step 7 -->
     <div class="step">
       <div class="step-marker">7</div>
       <div class="card">
